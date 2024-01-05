@@ -1,0 +1,8 @@
+.search
+  .container
+    form(action="/" class="search__form")
+      search.search__field(role="search")
+        input(type="text" name="search" autocomplete="off" aria-label="Поиск по каталогу" placeholder="Поиск по каталогу")
+        button(type="submit" class="search__btn")
+          +icon('search', 'search__icon')
+      button(type="button" class="search__close") Закрыть

@@ -1,0 +1,45 @@
+.mobileMenu
+  .mobileMenu__top
+    .mobileMenu__base.base
+      a(href="#").base__item.js-search-open
+        +icon('search','base__icon')
+      a(href="#").base__item
+        +icon('phone','base__icon')
+    a(href="#").mobileMenu__logo.logo
+      picture
+        source(media="(max-width: 481px)" srcset=`${baseDir}/img/logo-mobile.svg`)
+        img(src=`${baseDir}/img/logo-laptop.svg` alt="Savonry")
+    .mobileMenu__close
+      +icon('close','mobileMenu__close-icon')
+  .mobileMenu__inner(data-component="tabs")
+    .mobileMenu__tabs.js-tabs(data-tabs-open="0")
+      .mobileMenu__col
+        .mobileMenu__tab.js-tabs__tab Акции
+        .mobileMenu__tab.js-tabs__tab Новинки
+        .mobileMenu__tab.js-tabs__tab Лицо
+        .mobileMenu__tab.js-tabs__tab Ванна и душ
+        .mobileMenu__tab.js-tabs__tab Тело
+        .mobileMenu__tab.js-tabs__tab Волосы
+        .mobileMenu__tab.js-tabs__tab Для него
+        .mobileMenu__tab.js-tabs__tab Подарки
+        .mobileMenu__tab.js-tabs__tab Серии
+        .mobileMenu__tab.js-tabs__tab Аксессуары
+        .mobileMenu__tab.js-tabs__tab Для клиента
+        .mobileMenu__tab.js-tabs__tab Новости
+        .mobileMenu__tab.js-tabs__tab Статьи
+      .mobileMenu__col.js-tabs__content
+        - for (let x = 0; x < 13; x++)
+          .js-tabs__item
+            a(href="#") Антибактериальные  средства
+            a(href="#") Дезодоранты
+            a(href="#") Кремы для тела
+            a(href="#") Массажные плитки
+            a(href="#") Натуральные масла
+            a(href="#") Обертывание
+            a(href="#") Парфюмированные спреи для тела
+            a(href="#") Скрабы для тела
+            a(href="#") Солнцезащитные средства
+            a(href="#") Средства для ног
+            a(href="#") Средства для рука
+            a(href="#") Щетки для сухого массажа
+            a(href="#") Все для бритья

@@ -1,0 +1,20 @@
+section.s-cosmetics
+  .container
+    .cosmetics
+      h2.section__title.cosmetics__title 
+        | SAVONRY — это эффективная косметика с чистым растительным составом!
+      .cosmetics__wrapper
+        .cosmetics__col
+          .cosmetics__item
+            +icon('nature','cosmetics__icon')
+            | Натуральные ингридиенты
+          .cosmetics__item
+            +icon('payment','cosmetics__icon')
+            | Удобная оплата онлайн
+          .cosmetics__item
+            +icon('delivery','cosmetics__icon')
+            | Бесплатная доставка
+        .cosmetics__col
+          .cosmetics__inner 
+            .cosmetics__caption   
+              img(src=`${baseDir}/images/cosmetics/1.jpg` alt="Эффективная косметика" loading="lazy")

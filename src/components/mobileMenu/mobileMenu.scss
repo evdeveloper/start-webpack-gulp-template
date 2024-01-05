@@ -1,0 +1,154 @@
+.mobileMenu {
+	$this: &;
+
+	width: 100%;
+	max-width: 100%;
+	position: fixed;
+	visibility: hidden;
+	pointer-events: none;
+	opacity: 0;
+	top: 0;
+	left: 0;
+	transition: all 0.3s ease-in-out;
+	transform: translateX(-100%);
+	height: 100%;
+	z-index: 2000;
+	background-color: var(--white);
+	&.active {
+		transform: translateX(0);
+		pointer-events: all;
+		visibility: visible;
+		opacity: 1;
+	}
+	&__tabs {
+		display: grid;
+		grid-template-columns: 265px 1fr;
+		@include media(600px) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include media(481px) {
+			grid-template-columns: 1fr;
+			.js-tabs__content {
+				width: 100%;
+				position: absolute;
+				z-index: 100;
+				top: 100px;
+				transform: translateX(200%);
+				transition: transform var(--duration) ease-in-out;
+				&.show {
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+	&__back {
+		display: block;
+		position: fixed;
+		z-index: 2000;
+		left: 0;
+		top: 100px;
+		&-icon {
+			@include size(50px);
+			fill: var(--gray);
+		}
+		&.hide {
+			display: none;
+		}
+	}
+	&__tab {
+		text-transform: uppercase;
+		&.active {
+			color: var(--gray);
+		}
+	}
+	&__col {
+		overflow: auto;
+		padding: 40px 80px;
+		background-color: var(--white);
+		height: calc(100dvh - 100px);
+		&:first-child {
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+			padding-right: 64px;
+			border-right: 1px solid var(--light-grey);
+			@include media(600px) {
+				padding-right: 20px;
+			}
+			@include media(481px) {
+				border-right: none;
+				padding-right: 80px;
+			}
+			@include media(415px) {
+				padding-right: 40px;
+			}
+		}
+		&:last-child {
+			@include media(415px) {
+				padding-top: 60px;
+			}
+		}
+		.js-tabs {
+			&__item {
+				flex-direction: column;
+				gap: 16px;
+				a {
+					font-weight: 300;
+				}
+			}
+		}
+		@include media(600px) {
+			padding: 20px;
+		}
+		@include media(481px) {
+			padding: 40px 80px;
+		}
+		@include media(415px) {
+			padding: 40px;
+		}
+	}
+	&__base {
+		position: absolute;
+		left: 24px;
+		top: 50%;
+		transform: translateY(-50%);
+		@include media(415px) {
+			left: auto;
+			right: 24px;
+		}
+	}
+	&__close {
+		position: absolute;
+		right: 24px;
+		top: 24px;
+		@include size(24px);
+		&-icon {
+			@include size(100%);
+			fill: var(--gray);
+		}
+		@include media(415px) {
+			top: 50%;
+			transform: translateY(-50%);
+			left: 24px;
+		}
+	}
+	&__top {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 24px;
+		height: 100px;
+		border-bottom: 1px solid var(--light-grey);
+	}
+	&__list {
+		display: none;
+		flex-direction: column;
+		gap: 5px;
+		position: relative;
+		background-color: var(--blue-menu);
+		padding: 15px 0 34px;
+	}
+	&__inner {
+	}
+}

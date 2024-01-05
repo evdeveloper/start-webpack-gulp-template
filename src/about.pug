@@ -1,0 +1,10 @@
+extends base/pug/main
+
+append variables
+  - var title = 'О нас'
+  - var pageClass = 'about-page'
+  - var baseDir = '../static';
+
+block content
+  include components/breadcrumbs/breadcrumbs
+  include components/section/about/about

@@ -1,0 +1,114 @@
+.popup {
+  $this: &;
+  display: none;
+  &.show {
+    display: block;
+    #{$this}__content {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+      pointer-events: all;
+      visibility: visible;
+    }
+  }
+  &#{$this}--scroll {
+    #{$this}__content {
+      height: calc(100vh - 40px);
+      overflow: auto;
+      &::-webkit-scrollbar { width: 8px; }
+      &::-webkit-scrollbar-thumb { background-color: var(--gray); }
+      &::-webkit-scrollbar-track { background-color: var(--blue); }
+    }
+  }
+  &__backdrop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    @include size(100%);
+    background-color: rgba(0,0,0, .7);
+  }
+  &__content {
+    position: fixed;
+    width: calc(100% - 30px);
+    max-width: 530px;
+    left: 50%;
+    top: 50%;
+    background-color: var(--white);
+    padding: 40px;
+    z-index: 1100;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    border-radius: 10px;
+    animation-name: fadeInUp;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    @include media(481px) { padding: 40px 24px; }
+  }
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 20;
+    cursor: pointer;
+    transition: all var(--duration);
+    right: 12px;
+    top: 12px;
+    @include size(46px);
+    padding: 3px;
+    &-icon {
+      @include size(100%);
+      fill: var(--gray);
+      transition: fill var(--duration);
+    }
+    @include media-min(769px) {
+      &:hover {
+        #{$this}__close-icon { fill: var(--black); }
+      }
+    }
+    @include media(481px) { @include size(34px); }
+  }
+  &__title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 140%;
+    margin-bottom: 48px;
+    font-family: var(--raleway-font);
+    @include media(481px) {
+      font-size: 24px;
+      margin-bottom: 32px;
+    }
+  }
+  &__text {
+    margin-bottom: 24px;
+  }
+  &__tabs {
+    .js-tabs {
+      &__list {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 48px;
+        @include media(481px) { margin-bottom: 32px; }
+        @include media(415px) { gap: 16px; }
+      }
+      &__tab {
+        font-size: 32px;
+        font-weight: 600;
+        font-family: var(--raleway-font);
+        color: var(--gray);
+        transition: color var(--duration);
+        &.active { color: var(--black); }
+        @include media(481px) { font-size: 24px; }
+      }
+    }
+  }
+  &--rating {
+    margin: 24px 0;
+  }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translate(-50%, 1000%); }
+  100% { opacity: 1; transform: translate(-50%, -50%); }
+}

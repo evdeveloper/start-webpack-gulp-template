@@ -1,0 +1,96 @@
+.search {
+	$this: &;
+
+	display: none;
+	width: 100%;
+	height: 100px;
+	position: fixed;
+	z-index: 3000;
+	left: 0;
+	top: 0;
+	padding: 24px 20px;
+	background-color: var(--white);
+	@include media(961px) {
+		border-bottom: 1px solid var(--light-grey);
+	}
+	&.open {
+		display: block;
+	}
+	&__form {
+		display: flex;
+		gap: 20px;
+		@include media(769px) {
+			margin: 0 -15px;
+		}
+	}
+	&__field {
+		position: relative;
+		flex: 1;
+		height: 52px;
+		border-radius: 5px;
+		border: 1px solid var(--light-grey);
+		padding: 0 16px 0 72px;
+		input {
+			@include size(100%);
+			color: var(--black);
+			font-weight: 300;
+			&::placeholder {
+				transition: opacity var(--duration);
+				color: var(--gray);
+			}
+			&:focus {
+				&::placeholder {
+					opacity: 0;
+				}
+			}
+		}
+	}
+	&__close {
+		display: flex;
+		align-items: center;
+		padding: 0 5px;
+		font-weight: 300;
+		cursor: pointer;
+	}
+	&__inner {
+		display: flex;
+		border-radius: 8px;
+		border: 2px solid var(--gold);
+		background-color: var(--gold);
+		height: 41px;
+		overflow: hidden;
+	}
+	&__icon {
+		@include size(32px);
+		fill: var(--gray);
+		transition: fill var(--duration);
+	}
+	&__input {
+		@include size(100%);
+		padding: 0 25px;
+		font-size: 14px;
+		border-radius: 8px;
+		font-family: var(--base-font);
+		background-color: var(--white);
+		&::placeholder {
+			transition: opacity 0.3s;
+			color: var(--gray);
+		}
+		&:focus {
+			&::placeholder {
+				opacity: 0;
+			}
+		}
+	}
+	&__btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 16px;
+		&:hover {
+			#{$this}__icon {
+				fill: var(--black);
+			}
+		}
+	}
+}

@@ -1,0 +1,68 @@
+.s-about {
+  padding: 60px 0 120px;
+  @include media(769px) { padding: 32px 0 64px; }
+}
+
+.about {
+  $this: &;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  @include media(600px) { flex-direction: column; }
+  &__title { 
+    margin-bottom: 80px;
+    @include media(481px) { margin-bottom: 48px; }
+  }
+  &__col {
+    @include media(769px) { flex: 1; }
+  }
+  &__info {
+    max-width: 490px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    @include media(481px) { gap: 16px; }
+  }
+  &__descr {
+    font-size: 24px;
+    @include media(376px) { font-size: 18px; }
+  }
+  &__text {
+    font-weight: 300;
+    line-height: 150%;
+  }
+  #{$this}__button {
+    align-self: flex-start;
+    @include media(376px) { align-self: stretch; }
+  }
+  &__caption {
+    position: relative;
+    z-index: 1;
+    margin-left: 32px;
+    @include media(769px) { margin-left: 16px; }
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -30px;
+      background-color: var(--green);
+      border-radius: 10px;
+      @include media(769px) { top: -16px; }
+    }
+    &:before {
+      width: calc(50% - 16px);
+      height: 100%;
+      left: -32px;
+      @include media(769px) { left: - 16px; }
+    }
+    &:after {
+      width: calc(50% - 16px);
+      left: calc(50% - 32px);
+      height: 80%;
+      @include media(769px) { left: calc(50% - 16px); }
+    }
+  }
+}

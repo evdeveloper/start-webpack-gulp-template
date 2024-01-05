@@ -1,0 +1,21 @@
+.rating {
+  $this: &;
+
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  font-weight: 300;
+  @include media(481px) { flex-wrap: wrap; gap: 16px; }
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  &__item {
+    cursor: pointer;
+  }
+  &__icon {
+    @include size(28px);
+    fill: var(--orange);
+  }
+}

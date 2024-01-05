@@ -1,0 +1,100 @@
+include ../pug/utils/mixins
+block variables
+  - var baseDir = '../static';
+
+doctype html
+html(lang="ru-RU")
+  head
+    meta(charset="utf-8")
+    title #{title}
+    <!--[if IE]>
+    meta(http-equiv='X-UA-Compatible', content="IE = edge")
+    <![endif]-->
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    meta(name="keywords" content="")
+    meta(name="description" content="")
+    meta(name="color-theme" content="")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Mulish:wght@300;400&family=Raleway:wght@400;600&family=Ubuntu:wght@300&display=swap" rel="stylesheet")
+    link(rel="stylesheet" type='text/css' href=`${baseDir}/css/main.css?ver='${Math.random()}'`)
+    <!--[if lt IE 9]>
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+    <![endif]-->
+  body(class=pageClass)
+    .wrapper
+      include ../../components/header/header
+      main.content#content
+        block content
+      include ../../components/footer/footer
+    //- include ../../components/mobileMenu/mobileMenu
+    include ../../components/search/search
+    //- include ../../components/filterModal/filterModal
+    .popup.popup-forgot-password(data-popup-target="popup-forgot-password")
+      .popup__backdrop
+      .popup__content
+        .popup__close
+          +icon('close','popup__close-icon')
+        h2.popup__title 
+          | Забыли пароль?
+        p.popup__text 
+          | Введите E-Mail Вашей учетной записи. Нажмите кнопку Вперед, чтобы получить пароль по электронной почте.
+        form(action="/" class="form")
+          input(type="email" name="email" autocomplete="off" class="input" aria-label="E-mail" placeholder="E-mail")
+          button(type="submit" class="button w-full") Продолжить
+    .popup.popup-login(data-popup-target="popup-login")
+      .popup__backdrop
+      .popup__content(data-component="tabs")
+        .popup__close
+          +icon('close','popup__close-icon')
+        .popup__tabs.js-tabs(data-tabs-open="1")
+          .js-tabs__list
+            .js-tabs__tab
+              | Регистрация
+            .js-tabs__tab
+              | Вход
+          .js-tabs__inner
+            .js-tabs__item
+              form(action="/" class="form")
+                .form__inner
+                  input(type="text" name="firstname" class="input" aria-label="Имя" placeholder="Имя")
+                  input(type="text" name="lastname" class="input" aria-label="Фамилия" placeholder="Фамилия")
+                  input(type="email" name="email" class="input" aria-label="E-mail" placeholder="E-mail")
+                  input(type="tel" name="tel" class="input" aria-label="Телефон" placeholder="+ 7 (999) 999-99-99")
+                  input(type="password" name="password" class="input" aria-label="Пароль" placeholder="Пароль")
+                  input(type="password-repeat" name="password" class="input" aria-label="Повторите пароль" placeholder="Повторите пароль")
+                button(type="submit" class="button w-full") Продолжить
+            .js-tabs__item
+              form(action="/" class="form")
+                .form__inner
+                  input(type="email" name="email" class="input" aria-label="E-mail" placeholder="E-mail")
+                  input(type="password" name="password" class="input" aria-label="Пароль" placeholder="Пароль")
+                button(type="submit" class="button w-full") Продолжить
+                a(href="#" class="form__forgot" data-popup-open="popup-forgot-password") Забыли пароль? 
+    .popup.popup-feedback(data-popup-target="popup-feedback")
+      .popup__backdrop
+      .popup__content
+        .popup__close
+          +icon('close','popup__close-icon')
+        h2.popup__title Оставить отзыв
+        form(action="/" class="form")
+          input(type="text" name="name" class="input" aria-label="name" placeholder="Имя")
+          .rating.popup--rating
+            span Оцените товар
+            .rating__list
+              .rating__item
+                +icon('star','rating__icon')
+              .rating__item
+                +icon('star','rating__icon')
+              .rating__item
+                +icon('star','rating__icon')
+              .rating__item
+                +icon('star','rating__icon')
+              .rating__item
+                +icon('star','rating__icon')
+          textarea(name="msg" class="textarea" placeholder="Отзыв")
+          button(type="submit" class="button w-full") Продолжить
+
+    script(src=`${baseDir}/js/main.js?ver='${Math.random()}'`)
+  
+    block script

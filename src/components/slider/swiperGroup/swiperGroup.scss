@@ -1,0 +1,31 @@
+.swiperGroup {
+  $this: &;
+
+  @include media(769px) { margin: 0 -20px; padding: 0 20px; }
+  @include media(481px) { margin: 0 -15px; padding: 0 15px; }
+  &__slide {
+    max-width: 285px;
+    @include media(376px) { max-width: 270px; }
+  }
+  &__arrow {
+    @include size(40px);
+    position: absolute;
+    top: 120px;
+    z-index: 1;
+    background-color: rgba(0,0,0, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .3s;
+    &:hover { background-color: rgba(0,0,0, 0.2); }
+    &.swiper-button-disabled { opacity: 0; pointer-events: none; }
+    @include media(769px) { display: none; }
+  }
+  &__icon { @include size(100%); }
+  &__prev { left: 0; }
+  &__next { right: 0; }
+  &__name {
+    font-size: 25px;
+    margin: 20px 0 10px;
+    font-weight: 500;
+  }
+}

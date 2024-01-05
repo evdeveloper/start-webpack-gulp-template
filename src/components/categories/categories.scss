@@ -1,0 +1,30 @@
+.categories {
+  margin-bottom: 40px;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    @include media(481px) {
+      flex-wrap: nowrap;
+      overflow: auto;
+      padding: 0 15px 10px 15px;
+      margin: 0 -15px -10px -15px;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 300;
+    padding: 12px 24px;
+    text-transform: lowercase;
+    border-radius: 10px;
+    transition: all var(--duration);
+    border: 1px solid var(--black);
+    @include media-min(769px) {
+      &:hover { color: var(--gray); border-color: var(--gray);}
+    }
+    @include media(481px) { white-space: nowrap; }
+  }
+}

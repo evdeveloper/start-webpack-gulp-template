@@ -1,0 +1,70 @@
+section.s-contacts
+  .container
+    h1.section__title.text-3xl Контакты
+    .contacts__map 
+      iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A712cd85ac211c424fcea2bece8d0591b7c2458b84e835f2eb1e3e5c7df85bcca&amp;source=constructor" width="100%" height="440" frameborder="0")
+    .contacts-info__inner 
+      .contacts-info__col
+        h3.contacts-info__title Контактные данные
+        .contacts-info__item
+          span.font-normal Адрес:
+          p г. Санкт-Петербург, ул. Якорная, д. 12
+        .contacts-info__item
+          span.font-normal Телефон:
+          a(href="tel:+79817022227") +7 (981) 702-22-27
+          a(href="tel:+78005052305") +7 (800) 505-23-05
+        .contacts-info__item
+          span.font-normal Почта:
+          a(href="mailto:zakaz@savonryshop.ru") zakaz@savonryshop.ru
+        .contacts-info__working.font-normal
+          | Рабочие дни с 9:30 до 17:30, прием заказов online 24/7
+      .contacts-info__col
+        h3.contacts-info__title Реквизиты организации
+        .contacts-info__wrapper
+          ul.contacts-info__list
+            li
+              span.font-normal Название:
+              p ИП ДОМКЕ ИННА ВАСИЛЬЕВНА
+            li
+              span.font-normal ИНН:
+              p 780101602509
+            li
+              span.font-normal ОГРН:
+              p 322784700034519
+            li
+              span.font-normal Р/с:
+              p 40802810955000083317
+            li
+              span.font-normal К/с:
+              p 30101810500000000653
+            li
+              span.font-normal БИК:
+              p 044030653
+            li 
+              a(href="/assets/doc/rekvizity.rtf" class="font-normal" download)  Скачать реквизиты
+          ul.contacts-info__list
+            li
+              span.font-normal Юридический адрес:
+              p 199004, Санкт-Петербург г, вн.тер.г. муниципальный округ Остров Декабристов, наб Макарова д.18, кв.14
+            li
+              span.font-normal Фактический адрес:
+              p 199004, Санкт-Петербург г, вн.тер.г. муниципальный округ Остров Декабристов, наб Макарова д.18, кв.14
+            li
+              span.font-normal Почтовый адрес:
+              p 199004, Санкт-Петербург г, вн.тер.г. муниципальный округ Остров Декабристов, наб Макарова д.18, кв.14
+    h2.section__title Напишите нам
+    form(action="/" class="contacts-form")
+      .contacts-form__inner
+        input(type="text" name="firstname" class="input flex-1" aria-label="Имя" placeholder="Имя") 
+        input(type="email" name="email" class="input flex-1" aria-label="E-mail" placeholder="E-mail")
+        input(type="tel" name="tel" class="input flex-1" aria-label="Телефон" placeholder="Телефон")
+        textarea(name="msg" class="textarea" placeholder="Ваше сообщение")
+      .contacts-form__bottom
+        button(type="submit" class="button") Отправить
+        .contacts-form__agree
+          | Нажимая продолжить я даю своё согласие на 
+          a(href="#") 
+            span обработку персональных данных 
+          | в соответствии с 
+          a(href="#") 
+            span Политикой конфиденциальности 

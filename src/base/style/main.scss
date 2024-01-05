@@ -1,0 +1,132 @@
+
+@import 'utils/fonts';
+@import 'utils/mixins';
+@import 'utils/vars';
+
+html {
+  font-size: var(--base-font-size);
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: var(--base-font);
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  background-color: var(--white);
+  &.hidden { overflow: hidden; }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--white);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--raleway-font);
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 64px;
+  @include media(481px) { 
+    font-size: 48px;
+    &.text-3xl { font-size: 32px; }
+  }
+}
+
+h2 {
+  font-size: 48px;
+  @include media(481px) { font-size: 32px; }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a { 
+  text-decoration: none;
+  color: var(--black);
+  transition: color var(--duration);
+  &.orange {
+    color: var(--orange);
+    @include media-min(769px) { &:hover { color: var(--orange-hover); } }
+  }
+  @include hover() { color: var(--black); };
+}
+
+p { margin: 0; font-weight: 300; line-height: 150%; }
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+textarea { vertical-align: middle; }
+
+textarea { resize: none; }
+
+section { position: relative; }
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+input,
+select,
+button,
+textarea { font-family: var(--base-font); outline: none; cursor: pointer; border: none; font-size: var(--base-font-size); padding: 0; background-color: transparent; }
+
+*, *:before, *:after { box-sizing: border-box; }
+
+
+.content { flex: 1 0 auto; overflow: hidden; }
+
+.section {
+  &__title {
+    margin-bottom: 64px;
+    @include media(481px) { margin-bottom: 32px; }
+  }
+}
+
+.container {
+  $this: &;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @include media(481px) { padding: 0 15px; }
+}
+
+/** Components */
+@import '../../components/components';
+
+/** Vendor styles */
+@import '../../vendor/vendor';

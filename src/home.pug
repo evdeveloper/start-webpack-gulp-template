@@ -1,0 +1,14 @@
+extends base/pug/main
+
+append variables
+  - var title = 'Главная'
+  - var pageClass = 'home-page'
+  - var baseDir = '../static';
+
+block content
+  include components/sliderHome/sliderHome
+  include components/section/new/new
+  include components/section/cosmetics/cosmetics
+  include components/section/hit/hit
+  include components/section/about/about
+  include components/section/subscribe/subscribe

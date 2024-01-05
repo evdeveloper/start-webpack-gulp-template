@@ -1,0 +1,13 @@
+section.s-subscribe
+  .container
+    .subscribe
+      h2.section__title.subscribe__title
+        | Узнавайте первыми о наших акциях, розыгрышах и новостях
+      form(action="/" class="subscribe__form")
+        .subscribe__inner  
+          input(type="text" name="subscribe" class="subscribe__input" aria-label="subscribe" placeholder="E-mail")
+          button(type="submit" class="button") Подписаться
+        .subscribe__agree 
+          | Нажимая подписаться, вы соглашаетесь на обработку 
+          a(href="#") 
+            span персональных данных

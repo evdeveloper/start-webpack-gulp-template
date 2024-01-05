@@ -1,0 +1,32 @@
+:root {
+	--base-font: "Mulish", sans-serif;
+	--inter-font: "Inter", sans-serif;
+	--raleway-font: "Raleway", sans-serif;
+	--ubuntu-font: "Ubuntu", sans-serif;
+	--base-font-size: 16px;
+	--duration: 0.3s;
+	--white: #fff;
+	--white-50: rgba(255, 255, 255, 0.5);
+	--bg: #fbfbf7;
+	--black: #000;
+	--gray: #817e79;
+	--light-grey: #d2d2d2;
+	--red: #ff0b0b;
+	--green: #cfdbd1;
+	--orange: #fdbe87;
+	--orange-hover: #f6811b;
+	--pink: #f7cddb;
+	--blue: #bee2e7;
+	--btn-hover: #323232;
+
+	// button settings
+	--button-height: 52px;
+	--button-font-size: var(--base-font-size);
+	--button-border: 1px solid var(--black);
+	--button-border-radius: 10px;
+	--button-font: var(--base-font);
+	--button-font-weight: 400;
+	--button-color: var(--white);
+}
+
+@import "utils/libs";

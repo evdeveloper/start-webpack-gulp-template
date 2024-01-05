@@ -1,0 +1,40 @@
+.sliderHome
+  .sliderHome__slider.swiper
+    .sliderHome__wrapper.swiper-wrapper
+      .sliderHome__slide.swiper-slide
+        picture
+          source(media="(max-width: 361px)" srcset=`${baseDir}/img/banner/banner-phone.jpg`)
+          source(media="(max-width: 481px)" srcset=`${baseDir}/img/banner/banner-iphone.jpg`)
+          source(media="(max-width: 769px)" srcset=`${baseDir}/img/banner/banner-tablet.jpg`)
+          source(media="(max-width: 1001px)" srcset=`${baseDir}/img/banner/banner-middle.jpg`)
+          img(src=`${baseDir}/img/banner/banner-laptop.jpg` alt="баннеры" loading="lazy")
+        .sliderHome__inner
+          h1 Новинка!
+          p Встречай новую коллекцию шариков для ванны
+          a(href="#" class="button") Подробнее
+      .sliderHome__slide.swiper-slide
+        picture
+          source(media="(max-width: 361px)" srcset=`${baseDir}/img/banner/banner-phone.jpg`)
+          source(media="(max-width: 481px)" srcset=`${baseDir}/img/banner/banner-iphone.jpg`)
+          source(media="(max-width: 769px)" srcset=`${baseDir}/img/banner/banner-tablet.jpg`)
+          source(media="(max-width: 1001px)" srcset=`${baseDir}/img/banner/banner-middle.jpg`)
+          img(src=`${baseDir}/img/banner/banner-laptop.jpg` alt="баннеры" loading="lazy")
+        .sliderHome__inner
+          h1 Новинка!
+          p Встречай новую коллекцию шариков для ванны
+          a(href="#" class="button") Подробнее
+      .sliderHome__slide.swiper-slide
+        picture
+          source(media="(max-width: 361px)" srcset=`${baseDir}/img/banner/banner-phone.jpg`)
+          source(media="(max-width: 481px)" srcset=`${baseDir}/img/banner/banner-iphone.jpg`)
+          source(media="(max-width: 769px)" srcset=`${baseDir}/img/banner/banner-tablet.jpg`)
+          source(media="(max-width: 1001px)" srcset=`${baseDir}/img/banner/banner-middle.jpg`)
+          img(src=`${baseDir}/img/banner/banner-laptop.jpg` alt="баннеры" loading="lazy")
+        .sliderHome__inner
+          h1 Новинка!
+          p Встречай новую коллекцию шариков для ванны
+          a(href="#" class="button") Подробнее
+    .swiperHome__arrow.swiperHome__prev
+      +icon('arrow-left','swiperHome__icon')
+    .swiperHome__arrow.swiperHome__next
+      +icon('arrow-right','swiperHome__icon')

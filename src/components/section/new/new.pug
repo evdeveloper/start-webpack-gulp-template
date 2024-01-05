@@ -1,0 +1,36 @@
+section.s-new
+  .container
+    h2.section__title.text-center Новинки
+    .swiperGroup.swiper
+      .swiperGroup__wrapper.swiper-wrapper
+        .swiperGroup__slide.card__item.swiper-slide
+          a(href="#").card__top
+            img(src=`${baseDir}/images/new/1.png` alt="Savonry" loading="lazy")
+            .card__label Новинка
+          .card__body
+            .card__name Набор Ванильный эспрессо (уход за телом)
+            .card__inner 
+              .card__price 740 ₽
+              button(type="button" class="button button--outline button--small") В корзину
+        .swiperGroup__slide.card__item.swiper-slide
+          a(href="#").card__top
+            img(src=`${baseDir}/images/new/2.png` alt="Savonry" loading="lazy")
+            .card__label Новинка
+          .card__body
+            .card__name Набор Вишнёвый амаретто (уход за телом)
+            .card__inner 
+              .card__price 740 ₽
+              button(type="button" class="button button--outline button--small") В корзину
+        .swiperGroup__slide.card__item.swiper-slide
+          a(href="#").card__top
+            img(src=`${baseDir}/images/new/3.png` alt="Savonry" loading="lazy")
+            .card__label Новинка
+          .card__body
+            .card__name Набор Ванильный эспрессо (уход за телом)
+            .card__inner 
+              .card__price 740 ₽
+              button(type="button" class="button button--outline button--small") В корзину
+      .swiperGroup__arrow.swiperGroup__prev
+        +icon('arrow-left','swiperGroup__icon')
+      .swiperGroup__arrow.swiperGroup__next
+        +icon('arrow-right','swiperGroup__icon')

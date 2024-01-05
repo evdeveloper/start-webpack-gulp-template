@@ -1,0 +1,4 @@
+.s-hit {
+  padding: 60px 0;
+  @include media(769px) { padding: 32px 0; }
+}

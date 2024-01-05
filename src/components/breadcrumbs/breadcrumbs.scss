@@ -1,0 +1,21 @@
+.breadcrumbs {
+  padding: 40px 0;
+  font-weight: 500;
+  font-size: 12px;
+  overflow: auto hidden;
+  @include media(481px) { padding: 32px 0; }
+  &__inner {
+    display: flex;
+    gap: 7px;
+    span { color: var(--gray); }
+  }
+  &__current { white-space: nowrap; padding-right: 15px; }
+  &__link {
+    transition: color .3s;
+    white-space: nowrap;
+    color: var(--gray);
+    @include media-min(769px) {
+      &:hover { color: var(--black); }
+    }
+  }
+}

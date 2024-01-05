@@ -1,0 +1,39 @@
+.button {
+  $this: &;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--button-font-weight);
+  cursor: pointer;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--black);
+  font-size: var(--button-font-size);
+  font-family: var(--button-font);
+  height: var(--button-height);
+  border: var(--button-border);
+  transition: all var(--duration);
+  padding: 0 32px;
+  border-radius: var(--button-border-radius);
+  &:hover {
+    @include media-min(769px) {
+      color: var(--white);
+      background-color: var(--btn-hover);
+      border-color: var(--btn-hover);
+    }
+  }
+  &#{$this}--small {
+    height: 44px;
+  }
+  &#{$this}--outline {
+    background-color: transparent;
+    color: var(--black);
+    &:hover {
+      @include media-min(769px) {
+        background-color: var(--black);
+        color: var(--white);
+      }
+    }
+  }
+}

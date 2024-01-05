@@ -1,0 +1,4 @@
+.s-new {
+  padding: 120px 0 60px;
+  @include media(769px) { padding: 64px 0 32px; }
+}

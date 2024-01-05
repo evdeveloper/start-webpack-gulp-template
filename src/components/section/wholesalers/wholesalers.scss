@@ -1,0 +1,8 @@
+.s-wholesalers {
+  padding-bottom: 120px;
+  @include media(769px) { padding-bottom: 100px; }
+  @include media(481px) { padding-bottom: 64px; }
+  p {
+    &:not(:last-child) { margin-bottom: 16px; }
+  }
+}

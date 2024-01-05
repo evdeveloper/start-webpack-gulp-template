@@ -1,0 +1,84 @@
+header.header
+  .header__top
+    .container
+      .header__inner
+        .header__hamburger.header__col
+          .hamburger.js-hamburger
+            +icon('hamburger','hamburger__icon')
+        nav.header__nav.header__col
+          a(href="#") Статьи 
+          a(href="#") Новости 
+          a(href="#") Для клиента 
+        a(href="#").header__logo.header__col.logo
+          picture
+            source(media="(max-width: 481px)" srcset=`${baseDir}/img/logo-mobile.svg`)
+            img(src=`${baseDir}/img/logo-laptop.svg` alt="Savonry")
+        .header__base.header__col.base
+          a(href="#").base__item.js-search-open
+            +icon('search','base__icon')
+          a(href="#").base__item
+            +icon('phone','base__icon')
+          a(href="#" data-popup-open="popup-login").base__item
+            +icon('user','base__icon')
+          a(href="#").base__item
+            +icon('basket','base__icon')
+  .header__bottom
+    .container
+      nav.main-nav
+        ul.main-nav__list
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Акции
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Новинки
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Лицо
+            .main-dropdown
+              a(href="#").main-dropdown__link
+                | Антибактериальные  средства
+              a(href="#").main-dropdown__link
+                | Дезодоранты
+              a(href="#").main-dropdown__link
+                | Кремы для тела
+              a(href="#").main-dropdown__link
+                | Массажные плитки
+              a(href="#").main-dropdown__link
+                | Натуральные масла
+              a(href="#").main-dropdown__link
+                | Обертывание
+              a(href="#").main-dropdown__link
+                | Парфюмированные спреи для тела
+              a(href="#").main-dropdown__link
+                | Скрабы для тела
+              a(href="#").main-dropdown__link
+                | Солнцезащитные средства
+              a(href="#").main-dropdown__link
+                | Средства для ног
+              a(href="#").main-dropdown__link
+                | Средства для рука
+              a(href="#").main-dropdown__link
+                | Щетки для сухого массажа
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Ванна и душ
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Тело
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Волосы
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Для него
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Подарки
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Серии
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Аксессуары
+
